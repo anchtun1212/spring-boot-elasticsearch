@@ -22,5 +22,24 @@ Integrate Spring Boot with Elasticsearch
 			<artifactId>logstash-logback-encoder</artifactId>
 			<version>7.4</version>
 		</dependency>
-		
+
+8- Create a new file `logback-spring.xml`.
+
+9- Run `TestController.java` APIs to check (for `URL` or `Postman`).
+
+10- Got to: http://localhost:5601/ and `Management/Stack Management/Data/Index Management` you will see `springboot-test-log`.
+
+11- Click on: `Kibana/Data Views` then click on `Create data view` button.
+
+12- Choose `name` like: `spring*` (in your application choose: anchtunentreprise*).
+
+13- Choose the `Index pattern` like: `spring*`.
+
+14- Go to `Analitics/Discover`
+
+15- In `Selected Fields` choose `message` and `app`. 
+
+
+
+
 		
