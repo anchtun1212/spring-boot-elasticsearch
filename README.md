@@ -43,5 +43,146 @@ Integrate Spring Boot with Elasticsearch
 
 - To see elasticsearch configuration run: `curl "localhost:9200/_nodes/settings?pretty=true"`
 
+# Combine ELK with Filebeat
+
+1- Create a new folder: `filebeat_docker`
+
+2- Filebeat:
+
+Create a new file `Dockerfile` and create a new file `filebeat.yml`
+
+3- run: `docker build -t filebeatimage .`
+
+4- Configuring ELK or Elastic Stack
+
+5- `ElasticSearch`: `docker pull docker.elastic.co/elasticsearch/elasticsearch:7.5.1`
+
+6- Create a new folder `docker_elk`: `mkdir docker_elk && cd $_` and another folder `elasticsearch`
+
+7- Run: `touch Dockerfile && touch elasticsearch.yml`
+
+Note that you can set `xpack.license.self_generated.type` from `basic` to `trial` if you wish to evaluate the commercial feature of x-pack for 30 days.
+
+The command `chown` is to change the file owner to elasticsearch as of other files in container.
+
+8- `Kibana`: Run this: `docker pull docker.elastic.co/kibana/kibana:7.5.1`
+
+9- Create a new folder inside `docker_elk`: `mkdir kibana && cd $_`
+
+10- Run this: `touch Dockerfile && touch kibana.yml`
+
+11- `Logstash`: Run this: `docker pull docker.elastic.co/logstash/logstash:7.5.1`
+
+12- Create a new folder inside `docker_elk`: `mkdir logstash && cd $_`
+
+13- Run this: `touch Dockerfile && touch logstash.yml`
+
+14- Inside `logstash` folder create this file: `logstash.conf`
+
+It will be like this:
+
+.
+├── elasticsearch
+│   ├── Dockerfile
+│   └── elasticsearch.yml
+├── kibana
+│   ├── Dockerfile
+│   └── kibana.yml
+└── logstash
+    ├── Dockerfile
+    ├── logstash.conf
+    └── logstash.yml
+ 
+3 directories, 7 files
+
+
+15- `Docker Compose`
+
+Create a `docker-compose.yml` file in the `docker_elk` directory.
+
+16- Run: `sudo docker compose up -d`
+
+17- To ensure that the pipeline is working all fine, run the following command to see the Elasticsearch indices:
+
+`curl 'localhost:9200/_cat/indices?v' -u elastic:yourstrongpasswordhere`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		
