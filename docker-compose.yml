@@ -13,6 +13,7 @@ services:
       ports:
           - "9200:9200"
       volumes:
+#          - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
           - elasticsearch_data:/usr/share/elasticsearch/data
       networks:
           - elastic
@@ -25,10 +26,23 @@ services:
       environment:
           ELASTICSEARCH_URL: http://elasticsearch:9200
           ELASTICSEARCH_HOSTS: '["http://elasticsearch:9200"]'
+          XPACK_SPACES_ENABLED: true
+#          APPENDERS_ROLLING-FILE_TYPE: rolling-file
+#          APPENDERS_ROLLING-FILE_FILENAME: /var/log/elasticsearch/kibana.log
+#          APPENDERS_ROLLING-FILE_POLICY_TYPE: time-interval
+#          APPENDERS_ROLLING-FILE_POLICY_INTERVAL: 300s
+#          APPENDERS_ROLLING-FILE_POLICY_MODULATE: true
+#          APPENDERS_ROLLING-FILE_STRATEGY_TYPE: numeric
+#          APPENDERS_ROLLING-FILE_STRATEGY_PATTERN: -%i
+#          APPENDERS_ROLLING-FILE_STRATEGY_MAX: 10
+#          APPENDERS_ROLLING-FILE_LAYOUT_TYPE: pattern
       depends_on:
           - elasticsearch
       volumes:
-      - ./kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml
+          - type: volume
+            source: logs
+            target: /var/log/elasticsearch
+          - kibana_data:/usr/share/kibana/data
       networks:
           - elastic
 
@@ -57,3 +71,9 @@ networks:
 volumes:
     elasticsearch_data:
         driver: local
+    kibana_data:
+        driver: local
+    logs:
+        driver: local
+        
+        

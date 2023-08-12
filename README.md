@@ -39,7 +39,9 @@ Integrate Spring Boot with Elasticsearch
 
 15- In `Selected Fields` choose `message` and `app`. 
 
+# Tips
 
+- To see elasticsearch configuration run: `curl "localhost:9200/_nodes/settings?pretty=true"`
 
 
 		

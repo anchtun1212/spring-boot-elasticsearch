@@ -1,0 +1,22 @@
+xpack.encryptedSavedObjects.encryptionKey: 'fhjskloppd678ehkdfdlliverpoolfcr'
+
+#xpack.spaces.enabled: true
+
+#logging:
+#  appenders:
+#    rolling-file:
+#      type: rolling-file
+#      fileName: /var/log/elasticsearch/kibana.log
+#      policy:
+#        type: time-interval
+#        interval: 300s 
+#        modulate: true
+#      strategy:
+#        type: numeric
+#        pattern: '-%i'
+#        max: 10
+#      layout:
+#        type: pattern
+#  root:
+#    appenders: [default, rolling-file]
+  
