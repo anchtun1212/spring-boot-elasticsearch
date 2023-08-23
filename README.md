@@ -106,6 +106,45 @@ Create a `docker-compose.yml` file in the `docker_elk` directory.
 
 `curl 'localhost:9200/_cat/indices?v' -u elastic:yourstrongpasswordhere`
 
+# Install Elasticsearch, Logstash, and Kibana (Elastic Stack) on Ubuntu
+
+
+https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elastic-stack-on-ubuntu-20-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
