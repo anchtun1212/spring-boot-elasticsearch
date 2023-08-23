@@ -111,6 +111,8 @@ Create a `docker-compose.yml` file in the `docker_elk` directory.
 
 https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elastic-stack-on-ubuntu-20-04
 
+for Kibana you should install Nginx: https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-22-04
+
 
 
 
