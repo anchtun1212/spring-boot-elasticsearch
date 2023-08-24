@@ -45,6 +45,8 @@ Integrate Spring Boot with Elasticsearch
 
 - Copy data from container to the host: `sudo docker cp 4aa06b42ef44:/usr/share/elasticsearch/data /home/mohammedayman/elasticsearch/data/`
 
+- You can delete index... by API via console: http://localhost:5601/app/kibana#/dev_tools/console?load_from=https:%2F%2Fwww.elastic.co%2Fguide%2Fen%2Felasticsearch%2Freference%2F5.4%2Fsnippets%2F458.console&_g=()
+
 # Combine ELK with Filebeat
 
 1- Create a new folder: `filebeat_docker`
