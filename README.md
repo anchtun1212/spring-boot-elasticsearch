@@ -43,6 +43,8 @@ Integrate Spring Boot with Elasticsearch
 
 - To see elasticsearch configuration run: `curl "localhost:9200/_nodes/settings?pretty=true"`
 
+- Copy data from container to the host: `sudo docker cp 4aa06b42ef44:/usr/share/elasticsearch/data /home/mohammedayman/elasticsearch/data/`
+
 # Combine ELK with Filebeat
 
 1- Create a new folder: `filebeat_docker`
