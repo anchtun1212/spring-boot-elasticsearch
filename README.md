@@ -113,6 +113,31 @@ https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-lo
 
 for Kibana you should install Nginx: https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-22-04
 
+Just change the logstash config:
+
+`/etc/logstash/conf.d/02-beats-input.conf`
+
+		input {
+		  tcp {
+		   port => 5000
+		   codec => json
+		  }
+		  beats {
+		    port => 5044
+		  }
+		}
+
+
+`/etc/logstash/conf.d/30-elasticsearch-output.conf`
+		 
+		output {
+		 
+		  elasticsearch {
+		    hosts => "elasticsearch:9200"
+			index => "springboot-%{app}"
+		  }
+		}
+
 
 
 
