@@ -2,11 +2,6 @@ version: '3.8'
  
 services:
  
- permissions:
-   build: .
-   command:
-     - sudo chown -R 1000:1000 /usr/share/elasticsearch/data
-      
  elasticsearch:
    build:
      context: elasticsearch/
@@ -21,8 +16,6 @@ services:
      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
      ELASTIC_PASSWORD: yourstrongpasswordhere
      discovery.type: single-node
-   depends_on:
-     - permissions
    networks:
      - elk_stack
  
